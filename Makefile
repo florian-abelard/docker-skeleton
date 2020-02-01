@@ -15,8 +15,11 @@ export GROUP_ID
 include .env
 $(foreach var,$(shell cat .env),$(eval export ${var}))
 
--include .env.local
-$(test ! -e .env.local && foreach var,$(shell cat .env.local),$(eval export ${var}))
+-include application/.env
+$(test ! -e application/.env && foreach var,$(shell cat application/.env),$(eval export ${var}))
+
+-include application/.env.local
+$(test ! -e application/.env.local && foreach var,$(shell cat application/.env.local),$(eval export ${var}))
 
 #------------------------------------------------------------------------------
 
