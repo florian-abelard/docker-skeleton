@@ -39,9 +39,13 @@ make up
 
 ```bash
 rm application/ -Rf
-composer create-project symfony/website-skeleton application
+docker-compose exec php composer create-project symfony/website-skeleton application
+
+# A compléter
 ```
 
 ### Accès
 
-Accès interface sur `http://localhost`
+Accès interface web sur `http://localhost:8080`
+
+Accès adminer sur `http://localhost:8081`
