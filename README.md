@@ -18,7 +18,7 @@ cd <app_name>
 rm -Rf .git/
 git init
 
-git remote add origin git@github.com:florian-abelard/flo-gift-list.git
+git remote add origin git@github.com:florian-abelard/<app_name>.git
 ```
 
 Modifier le fichier `README.md`
