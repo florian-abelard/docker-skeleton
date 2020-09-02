@@ -44,6 +44,9 @@ bash-php: ## open a bash session in the php-fpm container
 bash-composer: ## open a bash session in the composer container
 	docker-compose -f ${DOCKER_COMPOSE_BUILDER_FILE} run --user ${USER_ID}:${GROUP_ID} composer /bin/bash
 
+bash-node: ## open a bash session in the node container
+	docker-compose -f ${DOCKER_COMPOSE_BUILDER_FILE} run --user ${USER_ID}:${GROUP_ID} node /bin/bash
+
 #------------------------------------------------------------------------------
 
 .DEFAULT_GOAL := help
