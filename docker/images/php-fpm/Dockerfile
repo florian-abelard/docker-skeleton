@@ -16,4 +16,4 @@ RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 RUN "date"
 
-WORKDIR /var/www/app
+WORKDIR /var/www/app/application
