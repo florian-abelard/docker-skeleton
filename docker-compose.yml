@@ -27,7 +27,7 @@ services:
     working_dir: /var/www/app/application
 
   db:
-    image: postgres:11.6
+    image: postgres:12-alpine
     container_name: ${APP_NAME}-db
     restart: always
     volumes:
