@@ -33,6 +33,8 @@ services:
     volumes:
       - ./data:/var/data
     environment:
+      TZ: 'Europe/Paris'
+      PGTZ: 'Europe/Paris'
       POSTGRES_USER: ${DATABASE_ADMIN}
       POSTGRES_PASSWORD: ${DATABASE_ADMIN_PASSWORD}
 
