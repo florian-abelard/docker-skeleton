@@ -2,7 +2,7 @@
 # Composer Makefile
 #------------------------------------------------------------------------------
 
-composer-exec = docker-compose -f ${DOCKER_COMPOSE_FILE} exec -T --user ${USER_ID} php composer ${1}
+COMPOSER_DOCKER_CMD = docker-compose -f ${DOCKER_COMPOSE_BUILDER_FILE} exec -T --user ${USER_ID}:${GROUP_ID} composer composer ${1}
 
 #------------------------------------------------------------------------------
 
@@ -13,13 +13,13 @@ endif
 composer-install: vendor ##@composer install / update composer dependencies
 
 composer-dump-autoload: ##@composer dump autoloading
-	$(call composer-exec, dump-autoload)
+	$(call COMPOSER_DOCKER_CMD, dump-autoload)
 
 vendor: composer.lock
-	$(call composer-exec, install --ignore-platform-reqs ${COMPOSER_ARGS})
+	$(call COMPOSER_DOCKER_CMD, install --ignore-platform-reqs ${COMPOSER_ARGS})
 
 composer.lock: composer.json
-	$(call composer-exec, update --ignore-platform-reqs ${COMPOSER_ARGS})
+	$(call COMPOSER_DOCKER_CMD, update --ignore-platform-reqs ${COMPOSER_ARGS})
 
 #------------------------------------------------------------------------------
 
