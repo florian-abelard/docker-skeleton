@@ -8,7 +8,6 @@ ROOT_PATH=$(shell pwd)
 DOCKER_COMPOSE_FILE?=./docker-compose.yml
 DOCKER_COMPOSE_BUILDER_FILE?=./docker/docker-compose-builder.yml
 
-
 export USER_ID
 export GROUP_ID
 export ROOT_PATH
@@ -16,13 +15,17 @@ export ROOT_PATH
 #------------------------------------------------------------------------------
 
 include .env
-$(foreach var,$(shell cat .env),$(eval export ${var}))
+export $(shell sed 's/=.*//' .env)
 
--include application/.env
-$(test ! -e application/.env && foreach var,$(shell cat application/.env),$(eval export ${var}))
+ifneq (,$(wildcard application/.env))
+	include application/.env
+	export $(shell sed 's/=.*//' application/.env)
+endif
 
--include application/.env.local
-$(test ! -e application/.env.local && foreach var,$(shell cat application/.env.local),$(eval export ${var}))
+ifneq (,$(wildcard application/.env.local))
+	include application/.env.local
+	export $(shell sed 's/=.*//' application/.env.local)
+endif
 
 #------------------------------------------------------------------------------
 
