@@ -41,7 +41,14 @@ make up
 
 ```bash
 rm application/ -Rf
-docker-compose exec php composer create-project symfony/website-skeleton application
+
+docker run --rm \
+    -v ${PWD}:/var/www/app \
+    -w /var/www/app \
+    composer:latest \
+    create-project symfony/website-skeleton:"^4.4" application
+
+sudo chown ${USER}. application/ -R 
 
 # A compléter
 ```
