@@ -12,13 +12,15 @@
 #### Initialisation du projet
 
 ```bash
-git clone git@github.com:florian-abelard/docker-starter-kit.git <app_name>
-cd <app_name>
+APPLICATION_NAME='<application_name>' # A personnaliser
+
+git clone git@github.com:florian-abelard/docker-starter-kit.git $APPLICATION_NAME
+cd $APPLICATION_NAME
 
 rm -Rf .git/
 git init
 
-git remote add origin git@github.com:florian-abelard/<app_name>.git
+git remote add origin git@github.com:florian-abelard/$APPLICATION_NAME.git
 ```
 
 Modifier le fichier `README.md`
