@@ -6,12 +6,15 @@ build: ##@docker build containers
 	docker-compose -f ${DOCKER_COMPOSE_FILE} build
 
 up: .env ##@docker build and start containers
-	docker-compose -f ${DOCKER_COMPOSE_FILE} up
+	docker-compose -f ${DOCKER_COMPOSE_FILE} up -d
 
 down: ##@docker stop and remove containers and volumes
 	docker-compose -f ${DOCKER_COMPOSE_FILE} down --volumes
 
 rebuild: build up ##@docker rebuild and start containers
+
+logs: ##@docker displays containers log
+	docker-compose logs -f -t --tail="5"
 
 #------------------------------------------------------------------------------
 
