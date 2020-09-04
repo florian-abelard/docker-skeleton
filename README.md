@@ -1,4 +1,8 @@
-# docker-skeleton
+# docker-starter-kit
+
+##Description 
+
+Starter kit Docker pour créer des applications basées sur une stack PHP / PostgreSQL
 
 ## Démarrage
 
@@ -12,7 +16,7 @@
 #### Initialisation du projet
 
 ```bash
-APPLICATION_NAME='<application_name>' # A personnaliser
+APPLICATION_NAME='<application_name>' # A définir
 
 git clone git@github.com:florian-abelard/docker-starter-kit.git $APPLICATION_NAME
 cd $APPLICATION_NAME
