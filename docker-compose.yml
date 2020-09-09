@@ -12,6 +12,8 @@ services:
     volumes:
       - .:/var/www/app
     working_dir: /var/www/app/application
+    environment:
+      XDEBUG_CONFIG: remote_host=${HOST_IP} remote_port=9001 remote_enable=1
 
   web:
     build: docker/images/nginx
