@@ -13,7 +13,7 @@ endif
 #------------------------------------------------------------------------------
 
 phpstan-analyse: ##@phpstan run the analysis on the specified folder
-	$(call PHPSTAN_DOCKER_CMD, analyse -c /app/docker/images/phpstan/phpstan.neon -l 0 $(COMPOSER_CLI_ARGS))
+	$(call PHPSTAN_DOCKER_CMD, analyse -c /app/docker/images/phpstan/phpstan.neon --level=6 $(COMPOSER_CLI_ARGS))
 
 #------------------------------------------------------------------------------
 
