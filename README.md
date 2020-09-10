@@ -44,7 +44,7 @@ make up
 ### Avec symfony
 
 ```bash
-rm application/ -Rf
+rm application/* -Rf
 
 docker run --rm \
     -v ${PWD}:/var/www/app \
