@@ -8,7 +8,7 @@ Starter kit Docker pour créer des applications basées sur une stack PHP / Post
 
 ### Pré-requis
 
-* docker
+* docker (version > 20.10)
 * docker-compose (version 3)
 
 ### Usage
