@@ -1,4 +1,4 @@
-FROM php:8.0.10-fpm-alpine
+FROM php:8.1.11-fpm-alpine
 
 RUN apk update \
     && apk add zlib-dev postgresql-dev git icu-dev libxml2-dev libzip-dev unzip \
@@ -9,7 +9,7 @@ RUN apk update \
     && docker-php-ext-install zip xml \
     # Xdebug
     && apk add --no-cache $PHPIZE_DEPS \
-    && pecl install xdebug-3.0.4 \
+    && pecl install xdebug \
     && docker-php-ext-enable xdebug \
     # Set timezone
     && apk add tzdata \
