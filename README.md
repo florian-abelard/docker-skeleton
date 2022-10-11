@@ -1,6 +1,6 @@
 # docker-starter-kit
 
-##Description 
+## Description 
 
 Starter kit Docker pour créer des applications basées sur une stack PHP / PostgreSQL
 
